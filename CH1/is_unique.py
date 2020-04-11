@@ -2,6 +2,7 @@
 # What if you cannot use additional data structures? 
 import unittest
 
+# Solution using set. O(n) Time Complexity. O(n) Space Complexity.
 def isUnique1(input):
     if not input:
         return True
@@ -15,6 +16,7 @@ def isUnique1(input):
             
     return True
 
+# Solution using sort. O(nlogn) Time Complexity. O(1) Space Complexity
 def isUnique2(string):
     string = sorted(string)
     n = len(string)
