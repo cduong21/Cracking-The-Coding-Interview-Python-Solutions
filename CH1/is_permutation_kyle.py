@@ -11,11 +11,15 @@ def is_permutation(s1, s2):
         chars[s1[i]] += 1
         chars[s2[i]] -= 1
 
-    for count in chars.values():
-        if count != 0:
-            return False
+        if chars[s1[i]] == 0:
+            del chars[s1[i]]
+        if chars[s2[i]] == 0:
+            del chars[s2[i]]
 
-    return True
+    if len(chars) == 0:
+        return True
+
+    return False
 
 
 class TestStrings(unittest.TestCase):
