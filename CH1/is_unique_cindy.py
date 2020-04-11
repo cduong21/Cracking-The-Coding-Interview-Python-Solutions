@@ -21,7 +21,6 @@ def isUnique1(string):
             s.add(i)
     return True
 
-
 """
 without additional data structure
     sort the string and then use pointers to check 
