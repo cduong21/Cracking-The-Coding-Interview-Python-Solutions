@@ -20,7 +20,7 @@ def palindrome_permutation(string):
                 return False
     # If our string is odd
     else:
-        odd_flag = False
+        odd_flag = False 
         for char in char_count:
             if char_count[char] % 2 != 0:
                 if odd_flag == True:

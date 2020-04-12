@@ -38,6 +38,6 @@ def palindrome_permutation(string):
     else: 
         return False
 
-test = "cat taco"
+test = "tactcoapapa"
 print(palindrome_permutation(test))
 
