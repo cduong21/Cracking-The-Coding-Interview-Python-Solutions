@@ -59,7 +59,6 @@ def isUnique4(string):
                 return False
     return True
 
-
 class TestStrings(unittest.TestCase):
     def test_isUnique(self):
         test1 = "abcde"

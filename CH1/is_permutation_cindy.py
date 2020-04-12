@@ -1,4 +1,6 @@
 import unittest
+from collections import defaultdict
+
 # given two strings, write a mthod to decide if one is a permutation of the other
 
 '''
@@ -42,11 +44,35 @@ def check_permutation1(string1, string2):
     else:
         return False 
 
+'''
+cleaner version 
+'''
+def check_permutation1(string1, string2):
+    n1, n2 = len(string1), len(string2)
+    if n1 != n2:
+        return False 
+
+    freq = defaultdict(int)
+    for i in range(n1):
+        freq[string1[i]] += 1 
+        freq[string2[i]] -= 1
+
+        if freq[string1[i]] == 0: 
+            del freq[string1[i]]
+
+        if freq[string2[i]] == 0: 
+            del freq[string2[i]]
+
+    if len(freq) == 0:
+        return True 
+    return False 
+
+
 class TestStrings(unittest.TestCase):
     def test_isUnique(self):
         s1 = "cat"
         s2 = "tac"
-        s3 = "catyy" 
+        s3 = "catyy"
         self.assertTrue(check_permutation1(s1, s2))
         self.assertFalse(check_permutation1(s1, s3))
 
