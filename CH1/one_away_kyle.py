@@ -18,6 +18,8 @@ def one_away(string1, string2):
         # our iterator on the longer string forward when we find a mismatch
         while itr1 < len(shorter) and itr2 < len(longer):
             if shorter[itr1] != longer[itr2]:
+                if edit == True:
+                    return False 
                 edit = True
                 itr2 += 1
                 if shorter[itr1] != longer[itr2]:
