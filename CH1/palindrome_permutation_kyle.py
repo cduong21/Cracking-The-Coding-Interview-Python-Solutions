@@ -1,18 +1,15 @@
 import collections
 test = "Tact Coa"
+test2 = "tactcoapapa"
 
 def palindrome_permutation(string):
     string = string.lower().replace(" ", "")
     n = len(string)
 
-    print(string)
-    print(n)
-
     char_count = collections.defaultdict(int)
     for c in string:
         char_count[c] += 1
 
-    print(char_count)
     #If our string is even
     if n % 2 == 0:
         for char in char_count:
@@ -31,3 +28,4 @@ def palindrome_permutation(string):
     return(True)
 
 print(palindrome_permutation(test))
+print(palindrome_permutation(test2))
